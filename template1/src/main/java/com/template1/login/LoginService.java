@@ -3,16 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.template1.service;
+package com.template1.login;
+
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author trevorbrown
  */
+@Service
 public class LoginService {
-    
+
     public boolean validateUser(String user, String password) {
-		return user.equalsIgnoreCase("trev") && password.equals("p");
-	}
-    
+        return user.equalsIgnoreCase("trev") && password.equals("p");
+    }
+
 }

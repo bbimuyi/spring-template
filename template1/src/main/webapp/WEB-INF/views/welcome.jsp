@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : welcome
     Created on : Oct 16, 2017, 12:48:19 PM
     Author     : trevorbrown
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        Welcome ${name} and your password is ${password}
+        Welcome ${name}. You are now authenticated.
     </body>
 </html>
