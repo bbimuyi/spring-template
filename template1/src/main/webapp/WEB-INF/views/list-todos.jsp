@@ -1,17 +1,44 @@
-<%--
-    Document   : welcome
-    Created on : Oct 16, 2017, 12:48:19 PM
-    Author     : trevorbrown
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
     <head>
         <title>Todos for ${name}</title>
+        <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+              rel="stylesheet">
     </head>
     <body>
-        <H1>Your Todos</H1>
-            ${todos}
+        <div class="container">
+            <table class="table table-striped">
+                <caption>Your Todos are</caption>
+
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Completed</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <c:forEach items="${todos}" var="todo">
+                        <tr>
+                            <td>${todo.desc}</td>
+                            <td>${todo.targetDate}</td>
+                            <td>${todo.done}</td>
+                            <td>
+                                <a type="button" class="btn btn-warning"
+                                   href="${pageContext.request.contextPath}/delete-todo?id=${todo.id}">Delete</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+            <div>
+                <a type="button" class="btn btn-success" href="${pageContext.request.contextPath}/add-todo">Add</a>
+            </div>
+        </div>
+
+        <script src="${pageContext.request.contextPath}/webjars/jquery/1.9.1/jquery.min.js"></script>
+        <script src="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </body>
 </html>
