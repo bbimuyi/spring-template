@@ -9,6 +9,7 @@ package com.template1.todo;
  *
  * @author trevorbrown
  */
+import com.template1.model.Todo;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,13 +37,14 @@ public class TodoController {
     }
 
     @RequestMapping(value = "/add-todo", method = RequestMethod.GET)
-    public String showTodoPage() {
+    public String showTodoPage(ModelMap model) {
+        model.addAttribute("todo", new Todo(0, "trev", "", new Date(), false));
         return "todo";
     }
 
     @RequestMapping(value = "/add-todo", method = RequestMethod.POST)
-    public String addTodo(ModelMap model, @RequestParam String desc) {
-        service.addTodo((String) model.get("name"), desc, new Date(), false);
+    public String addTodo(ModelMap model, Todo todo) {
+        service.addTodo((String) model.get("name"), todo.getDesc(), new Date(), false);
         model.clear();// to prevent request parameter "name" to be passed
         return "redirect:/list-todos";
     }
