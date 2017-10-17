@@ -5,7 +5,6 @@
  */
 package com.template1.service;
 
-import com.template1.model.Todo;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -13,10 +12,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author trevorbrown
- */
+import com.template1.model.Todo;
+
 @Service
 public class TodoService {
 
@@ -24,10 +21,10 @@ public class TodoService {
     private static int todoCount = 3;
 
     static {
-        todos.add(new Todo(1, "trev", "PRS", new Date(),
+        todos.add(new Todo(1, "trev", "Learn Spring MVC", new Date(),
                 false));
-        todos.add(new Todo(2, "trev", "Gibson", new Date(), false));
-        todos.add(new Todo(3, "trev", "Fender", new Date(),
+        todos.add(new Todo(2, "trev", "Learn Struts", new Date(), false));
+        todos.add(new Todo(3, "trev", "Learn Hibernate", new Date(),
                 false));
     }
 
@@ -41,7 +38,8 @@ public class TodoService {
         return filteredTodos;
     }
 
-    public void addTodo(String name, String desc, Date targetDate, boolean isDone) {
+    public void addTodo(String name, String desc, Date targetDate,
+            boolean isDone) {
         todos.add(new Todo(++todoCount, name, desc, targetDate, isDone));
     }
 

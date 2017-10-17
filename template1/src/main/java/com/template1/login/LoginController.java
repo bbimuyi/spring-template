@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
  *
  * @author trevorbrown
  */
-@SessionAttributes("name")
 @Controller
+@SessionAttributes("name")
 public class LoginController {
 
     @Autowired
-    LoginService loginService;
+    private LoginService loginService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String showLoginPage() {
@@ -32,12 +32,10 @@ public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String handleUserLogin(ModelMap model, @RequestParam String name,
             @RequestParam String password) {
-
         if (!loginService.validateUser(name, password)) {
             model.put("errorMessage", "Invalid Credentials");
             return "login";
         }
-
         model.put("name", name);
         return "welcome";
     }

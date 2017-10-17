@@ -7,10 +7,6 @@ package com.template1.model;
 
 import java.util.Date;
 
-/**
- *
- * @author trevorbrown
- */
 public class Todo {
 
     private int id;
