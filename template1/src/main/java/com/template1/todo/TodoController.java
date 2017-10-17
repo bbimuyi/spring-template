@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.template1.service.TodoService;
+import javax.validation.Valid;
+import org.springframework.validation.BindingResult;
 
 @Controller
 @SessionAttributes("name")
@@ -43,7 +45,10 @@ public class TodoController {
     }
 
     @RequestMapping(value = "/add-todo", method = RequestMethod.POST)
-    public String addTodo(ModelMap model, Todo todo) {
+    public String addTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
+        if (result.hasErrors()) {
+            return "todo";
+        }
         service.addTodo((String) model.get("name"), todo.getDesc(), new Date(), false);
         model.clear();// to prevent request parameter "name" to be passed
         return "redirect:/list-todos";
