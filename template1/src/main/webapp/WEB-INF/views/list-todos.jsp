@@ -26,6 +26,9 @@
                             <td>${todo.targetDate}</td>
                             <td>${todo.done}</td>
                             <td>
+                                <a type="button" class="btn btn-success"
+                                   href="${pageContext.request.contextPath}/update-todo?id=${todo.id}">Update</a>
+
                                 <a type="button" class="btn btn-warning"
                                    href="${pageContext.request.contextPath}/delete-todo?id=${todo.id}">Delete</a>
                             </td>
