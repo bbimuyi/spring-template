@@ -8,10 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Yahoo!!</title>
     </head>
     <body>
-        Welcome ${name}. You are now authenticated.
+        Welcome ${name}. You are now authenticated. <a href="${pageContext.request.contextPath}/list-todos">Click here</a> to start maintaining your todo's.
     </body>
 </html>
