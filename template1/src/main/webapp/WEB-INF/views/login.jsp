@@ -20,6 +20,11 @@
             Name : <input name="name" type="text" /> Password : <input name="password" type="password" /> <input type="submit" />
         </form>
 
+        <script src="${pageContext.request.contextPath}.webjars/jquery/1.9.1/jquery.min.js"></script>
+        <script src="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+              rel="stylesheet">
+
 
     </body>
 </html>
