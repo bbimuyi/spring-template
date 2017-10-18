@@ -42,10 +42,15 @@ public class TodoController {
                 dateFormat, false));
     }
 
+    private String getLoggedInUserName(ModelMap model) {
+        System.out.println("user is :" + (String) model.get("name"));
+        return (String) model.get("name");
+    }
+
     @RequestMapping(value = "/list-todos", method = RequestMethod.GET)
     public String showTodosList(ModelMap model) {
         String user = (String) model.get("name");
-        model.addAttribute("todos", service.retrieveTodos(user));
+        model.addAttribute("todos", service.retrieveTodos(getLoggedInUserName(model)));
         return "list-todos";
     }
 

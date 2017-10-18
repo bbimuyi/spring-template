@@ -4,7 +4,7 @@
     </div>
     <div class="navbar-collapse">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="${pageContext.request.contextPath}/login">Home</a></li>
+            <li class="active"><a href="${pageContext.request.contextPath}/welcome">Home</a></li>
             <li><a href="${pageContext.request.contextPath}/list-todos">Todos</a></li>
 
         </ul>
