@@ -8,5 +8,9 @@
             <li><a href="${pageContext.request.contextPath}/list-todos">Todos</a></li>
 
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
+        </ul>
+
     </div>
 </nav>
