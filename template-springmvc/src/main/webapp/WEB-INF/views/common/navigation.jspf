@@ -1,0 +1,23 @@
+<nav role="navigation" class="navbar navbar-default">
+
+    <!--<div class="">
+        <a href="http://www.usatoday.com" class="navbar-brand">USA Today</a>
+    </div>-->
+
+
+
+    <div class="navbar-collapse">
+
+
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="${pageContext.request.contextPath}/">Home</a></li>
+            <li><a href="${pageContext.request.contextPath}/list-todos">Guitars</a></li>
+            <li><a href="${pageContext.request.contextPath}/list-guitars">Guitars Needed</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
+        </ul>
+    </div>
+</div>
+
+</nav>
